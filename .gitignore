@@ -1,0 +1,11 @@
+vivado/*
+bd/**/hdl
+bd/**/hw_handoff
+bd/**/ip
+bd/**/ipshared
+bd/**/sim
+bd/**/synth
+*.bxml
+*.xdc
+*.jou
+*.log
