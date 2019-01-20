@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        docker { 
+            image 'vivado:2018.3'            
+        }
+    }
+    stages {
+        stage('Checkout') {
+            steps { 
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                sh '/bin/bash -l scripts/build_fpga.sh'
+            }
+        }
+    }
+    post { 
+        always {             
+            archiveArtifacts artifacts: 'vivado/**/impl_1/*.bit'
+            cleanWs()
+        }
+    }
+}
