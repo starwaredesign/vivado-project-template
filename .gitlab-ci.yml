@@ -1,0 +1,14 @@
+build:
+  variables:
+    GIT_STRATEGY: clone
+  Image: xilinx:latest
+  tags:
+    - xilinx
+  before_script:
+    - git clean -fd
+  script:
+    - source /opt/Xilinx/Vivado/2022.2/settings64.sh && scripts/build_fpga.sh
+  artifacts:
+    paths:
+      - petra*.bin
+

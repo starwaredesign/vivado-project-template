@@ -1,9 +1,8 @@
 # vivado-project-template
-Template for Xilinx Vivado projects. 
+Template for AMD/Xilinx Vivado/Petalinux projects. 
 
 Scripts for:
 - re-creation of the project
 - bitstream creation
-- metrics generation
 
-Scripts are CI friendly with an example for Jenkins (ci folder).
+Scripts are CI friendly with an example for Gitlab.
