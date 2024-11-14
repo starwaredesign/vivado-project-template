@@ -6,7 +6,7 @@ fpga/bd/**/ipshared
 fpga/bd/**/sim
 fpga/bd/**/synth
 fpga/bd/**/ui
+fpga/bd/**/*.xdc
 *.bxml
-*.xdc
 *.jou
 *.log

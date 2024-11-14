@@ -6,8 +6,9 @@ then
 fi
 echo "Project name $1"
 cd $1
-petalinux-config --silentconfig --get-hw-description ../../fpga/vivado/${1}_wrapper.xsa
+petalinux-config -D --silentconfig --get-hw-description ../../fpga/vivado/${1}_wrapper.xsa
+export BB_ENV_PASSTHROUGH_ADDITIONS="$BB_ENV_PASSTHROUGH_ADDITIONS CI_COMMIT_SHORT_SHA"
 petalinux-build
-petalinux-package --force --boot --fpga ../../fpga/vivado/${1}.runs/impl_1/${1}_wrapper.bit --uboot
+petalinux-package boot --force --fpga ../../fpga/vivado/${1}.runs/impl_1/${1}_wrapper.bit --uboot
 cd ..
 
